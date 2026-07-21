@@ -1,29 +1,74 @@
 body{
     background-color: rgba(106, 142, 35, 0.648);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 header{
-    color: white;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+figcaption{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    position:relative;
 }
 h1{
-    background-color: green;
+    background-color: olivedrab;
     margin-top: 0;
     margin-bottom: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+h2{color: black;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+clear: both;}
 nav{
-    background-color: green;
+    background-color: olivedrab;
     margin-top: 0;
     margin-bottom: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 a{
-    color: white;
+    color: black;
     font-weight: bold;
     text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+details{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+summary{color: black;
+    background-color: olivedrab;
+    margin-bottom: 5px;
 }
 p{
     color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+form{
+    max-width:fit-content;
+}
+legend{
+    color: black;
+    padding: 10px;
+    margin-right: 300px;
+}
+label{display:block;}
+fieldset{
+    color: black;
+    padding: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    border-color: green;
+}
+input[type="text"],input[type="email"]{
+    color: black;
+    padding: 10px;
+
 }
 a.submission{
-    color:black
+    color:black;
+    text-decoration: underline;
 }
 img.responsive{
     max-width: 100%; 
@@ -32,17 +77,48 @@ img.responsive{
     margin: auto; 
     float: left;
 }
-img.responsiv{
+figure img {
     max-width: 100%; 
     max-height: 300px; 
     display: block; 
-    margin: auto; 
+    object-fit: contain;
+    
 }
 img{
     padding: 10px;
+    position: relative;
+    height: auto;
+    object-fit: contain;
 }
+.gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+    }
 footer{clear: both;}
-h3{clear: both;}
-figcaption{text-align: center;}
-figure{display: inline-flex;
-align-items: center;}
+figure {
+    display: block;
+    align-items: center;
+    overflow:auto;
+    align-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    height: auto;
+    margin: 0 auto;
+}
+.hidden-text {
+        display: none;
+        margin-top: 15px;
+        font-size: 16px;
+        color: #333;
+    }
+.visible {
+        display: block;
+    }
+figcaption.events{
+    display: none;
+}
+figure.show-caption figcaption {
+        display: block; /* Show when figure has class */
+    }
