@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#submit').addEventListener('click', function(s){
+    document.querySelector('submit').addEventListener('click', function(s){
         s.preventDefault();
         alert('Submit the form now?');
-
-      //  if (confirm('Submit the form for processing now?')){
-           //                document.querySelector('form').submit();
-        //}
     
     const form = document.querySelector("#submission");
     form.addEventListener('click' , function(s)
@@ -21,18 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert("Please enter your full name");
                     console.log("Please enter your full name");
                 }
-        })
-        })
-function enlargeImg(figure) {
-    figure.style.transform = "scale(1.5)";
-    figure.style.transition =
-        "transform 0.25s ease";
-}
-function normal(figure){
-    figure.style.transform="scale(1.0)";
-    figure.style.transition =
-        "transform 0.25s ease";
-}
+        });
+        });
+document.querySelector("e1").addEventListener('click', function(){
+    console.log("hello");
+    alert("hello");
+});
 document.getElementById('search').addEventListener('keyup', function() {
     const filter = this.value.toLowerCase();
     const figures = document.querySelectorAll('.gallery figure');
@@ -41,17 +31,14 @@ document.getElementById('search').addEventListener('keyup', function() {
         const altText = fig.querySelector('img').alt.toLowerCase();
 
         if (caption.includes(filter)) {
-            figure.classList.remove("hidden");
+            fig.remove("hidden");
         } else {
-           figure.classList.add("hidden");
+           fig.add("hidden");
         }
     });
+const artworkContainer =
+            document.getElementById(
+                "artworkContainer"
+            );
 });
-function show(fig){
-    const extraText = document.getElementById('extraText');
-    // Toggle text visibility on click
-     fig.addEventListener('click', () => {
-        fig.classList.toggle('show-caption');
-    });
-}
 });
