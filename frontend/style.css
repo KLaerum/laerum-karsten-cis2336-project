@@ -116,9 +116,10 @@ figure {
 .visible {
         display: block;
     }
-figcaption.events{
+.events figcaption{
     display: none;
 }
 figure.show-caption figcaption {
         display: block; /* Show when figure has class */
     }
+
