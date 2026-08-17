@@ -1,27 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('submit').addEventListener('click', function(s){
-        s.preventDefault();
-        alert('Submit the form now?');
-    
     const form = document.querySelector("#submission");
-    form.addEventListener('click' , function(s)
-        {
-            const name=s.target.fullname.value;
-            const email=s.target.emailaddress.value;
-            const title=s.target.artTitle.value;
-            const category=s.target.category.value;
-            const price=s.target.price.value;
-            const description=s.target.description.value;
-            if(name.trim()==="")
-                {   
-                    alert("Please enter your full name");
-                    console.log("Please enter your full name");
-                }
-        });
+    form.querySelector('#submitbutton').addEventListener('click', function(s){
+        s.preventDefault();
+        //alert('Submit the form now?');
+        if (form.fullname.value =="")
+            alert("Please enter your full name");
+        if(form.emailaddress.value ==""||!form.emailaddress.value.includes("@")||!form.emailaddress.value.includes("."))
+            alert("Please enter a valid email address");
+        if(form.artTitle.value=="")
+            alert("Please enter the title of the Artwork");
+        if(form.category.value=="")
+            alert("Please enter a category for the Artwork");
+        if(form.price.value!=null&&form.price.value<0)
+            alert("Please enter a valid non-negative price");
+        if(form.description.value=="")
+            alert("Please enter a description of the Artwork");
+        form.submit();
         });
 document.querySelector("e1").addEventListener('click', function(){
-    console.log("hello");
-    alert("hello");
+    
 });
 document.getElementById('search').addEventListener('keyup', function() {
     const filter = this.value.toLowerCase();
