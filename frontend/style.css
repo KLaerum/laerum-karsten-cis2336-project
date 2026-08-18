@@ -122,4 +122,12 @@ figure {
 figure.show-caption figcaption {
         display: block; /* Show when figure has class */
     }
+.more-text {
+        display: none;
+    }
+.reveal-text
+{
+    background-color: olivedrab;
+    margin-bottom: 5px;
+}
 
