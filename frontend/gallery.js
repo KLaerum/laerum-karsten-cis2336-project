@@ -12,5 +12,68 @@ document.addEventListener('DOMContentLoaded', function(){
                 fig.style.display = "none";
             }
     });
+    const loadButton =
+            document.getElementById("loadButton");
+
+        const artworkContainer =
+            document.getElementById(
+                "artworkContainer"
+            );
+
+        loadButton.addEventListener("click", function () {
+
+                fetch("/api/artworks")
+
+                    .then(function (response) {
+                        return response.json();
+                    })
+
+                    .then(function (artworks) {
+
+                        artworkContainer.innerHTML = "";
+
+                        artworks.forEach(
+                            function (artwork) {
+
+                                const section =
+                                    document.createElement(
+                                        "section"
+                                    );
+
+                                section.innerHTML = `
+                                    <h3>
+                                        ${artwork.title}
+                                    </h3>
+
+                                    <p>
+                                        Artist:
+                                        ${artwork.artist}
+                                    </p>
+
+                                    <p>
+                                        Category:
+                                        ${artwork.category}
+                                    </p>
+
+                                    <p>
+                                        Price:
+                                        ${
+                                            artwork.price === null
+                                                ? "Not for Sale"
+                                                : "$" + artwork.price
+                                        }
+                                    </p>
+                                `;
+
+                                artworkContainer
+                                    .appendChild(section);
+
+                            }
+                        );
+
+                    });
+
+            }
+        );
 });
 });

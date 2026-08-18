@@ -55,8 +55,50 @@ document.addEventListener('DOMContentLoaded', function () {
                 valid=false;
                 description.reportValidity();
             }
-        if (valid)
+                
+        if (valid){
+             const artworkData = {
+                    title: title.value,
+                    artist: name.value,
+                    category: category.value,
+
+                    price:
+                        price.value === ""
+                            ? null
+                            : Number(price.value),
+                    description: description.value
+                    };
+             fetch("/api/artworks", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(artworkData)
+
+            })
+
+            .then(function (response) {
+
+                return response.json();
+
+            })
+
+            .then(function (result) {
+
+                message.textContent = result.message;
+
+                form.reset();
+
+                });
+
             form.submit();
+        }
+            
         });
         
 });

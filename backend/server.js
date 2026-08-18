@@ -8,9 +8,9 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname,"..","frontend")));
 
-let artworks={};
+let artworks=[];
 
-app.get("api/artworks", function(request , response)
+app.get("/api/artworks", function(request , response)
 {
     response.json(artworks);
 });
@@ -30,7 +30,7 @@ app.post("/api/artworks", function(request, response){
         return response.status(400).json({message: "Title, artist and category are required."});
 
     }
-    if(price !== null & price<0 )
+    if(price !== null && price<0 )
     {
         return response.status(400).json({message: "Price can't be negative."});
 
